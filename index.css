@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Itim", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+body *{
+    font-size: 23px;
+}
+.headline{
+    font-size: 24px;
+    background-color: #8f5bdd;
+    padding: 12px 12px 12px 12px;
+    border-radius: 12px;
+    margin-top: 50px;
+    
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 800px;
+    
+
+
+
+    background: linear-gradient(-25deg , #f9fdc7 0.50%, #f2f9d3 100%);
+
+    border-radius: 12px;
+
+
+
+
+
+}
+
+.card *{
+    margin: 10px;
+
+}
+
+input{
+    height: 8px;
+    border-radius: 8px;
+    border-color: white;
+    padding: 12px 12px 12px 12px;
+    
+}
+
+
+.increase{
+    border-color: #00ff00;
+    background-color: #00ff00;
+    width:25px;
+    border-radius: 50%;
+}
+.decrease{
+    border-color: #e425a5;
+    background-color: #e425a5;
+    width:25px;
+    border-radius: 50%;
+}
+.calculate{
+    background-color: #8f5bdd;
+    border-color: #8f5bdd;
+    border-radius: 12px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.headline{
+    background: linear-gradient(-25deg , #0f1cd1 20%, #be0d33 100%);
+    color:transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.result
+{
+    display: none;
+}
+
+
+
+.result{
+    background-color: #0f6abf;
+    color: white;
+    width:400px;
+    padding: 12px 12px 12px 12px;
+    height:380px;
+  
+    border-radius: 12px;
+    margin-top: 10px;
+   
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    grid-template-rows: auto; /* Rows will automatically size based on content */
+    gap: 1px; /* Gap between grid items */
+
+}
+button{
+    border-color: transparent;
+    color: white;
+}
+.display {
+    
+    padding: 10px;
+    font-size: 17px;
+}
+.minusing{
+    background-color: #e73a06;
+    color: white;
+    border-color: transparent;
+    border-radius: 50%;
+    width:30px;
+}
+
+
+
+.plusing{
+    color: blue;
+    border-color: transparent;
+    border-radius: 50%;
+    width:30px;
+    background-color: greenyellow;
+}
+
+.HideButton{
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #00ff00;
+    margin-left: 40%;
+    width: fit-content;
+
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    
+    
+    
+    <title>bill-calculator</title>
+</head>
+<body>
+    
+    
+    <div class="logo_area">
+
+   
+        <h1 class="headline">Tip claculator</h1>
+        <div class="card">
+            <label for="totalBill">Total Bill</label>
+            <input type="number" id="totalBill" placeholder=" input bill">
+            <label for="Tip-percentage">Tip %</label>
+            <input type="number" id="Tip-percentage" placeholder=" Tip-percentage">
+                
+                
+            <div class="people_area">
+                <label for="people">People</label>
+                    
+                <div class="inner_people">
+                    <button class="minusing" onclick="decreasePeople()">-</button>
+                    <label class="people">1</label>
+                    <button class="plusing" onclick="increasePeople()">+</button>    
+                    <button class="calculate" onclick="calculate()">calculate</button>    
+                </div>
+                
+                    
+            </div>
+            <hr>    
+        </div>
+    <div class="result">
+        <div class="display" style="grid-column: 1;">Total Bill</div>
+        <div class="display" id="Totalbill"  style="grid-column: 2;">100</div>
+        <div class="display" style="grid-column: 1;">Total tips</div>
+        <div class="display" id="Totaltips" style="grid-column: 2;">10tk</div>
+        <div class="display" style="grid-column: 1;">Vat(5%)</div>
+        <div class="display" id="TotalVat" style="grid-column: 2;">5tk</div>
+      
+
+        <div class="display" style="grid-column: 1;">Per person Payment</div>
+        <div class="display" id = "per_person" style="grid-column: 2;">115tk</div>
+      
+        <button class="HideButton" onclick="hideResults()">Hide</button>
+      
+    </div>
+    
+    </div> 
+</div>
+<script>
+    function hideResults(){
+        //console.log("Clicked");
+        document.querySelector(".result").style.display = "none";
+    }
+    function increasePeople(){
+        //console.log("Clicked");
+        var peopleNumber  = Number(document.querySelector(".people").innerHTML)
+       //console.log(peopleNumber);
+       peopleNumber++;
+       //console.log(peopleNumber);
+       document.querySelector('.people').innerHTML = peopleNumber;
+      
+    }
+    function decreasePeople(){
+        console.log("Clicked");
+        var peopleNumber  = Number(document.querySelector(".people").innerHTML)
+       console.log(peopleNumber);
+       if(peopleNumber > 1 ) peopleNumber--;
+       //console.log(peopleNumber);
+       document.querySelector('.people').innerHTML = peopleNumber;
+    }
+    function calculate(){
+        //console.log("Clicked");
+        document.querySelector('.result').style.display = 'block';
+        var peopleNumber = Number(document.querySelector(".people").innerHTML);
+        const totalBill = document.getElementById('totalBill').value;
+
+        document.getElementById('Totalbill').innerHTML = totalBill;
+
+        //console.log(totalBill);
+
+        const totalTips = document.getElementById('Tip-percentage').value * totalBill / 100;
+
+        document.getElementById('Totaltips').innerHTML = totalTips;
+
+        const totalVat = totalBill * 5 / 100;
+
+        
+        document.getElementById('TotalVat').innerHTML = totalVat;
+
+
+        const total = Number(totalBill) + Number(totalTips) + Number(totalVat) ;
+
+        const per_person = total / peopleNumber;
+
+        document.getElementById('per_person').innerHTML = Number(per_person);
+
+    }
+</script>
+</body>
+</html>
